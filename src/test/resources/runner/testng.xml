@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+<listeners>
+
+		<listener class-name="com.nationalguard.reports.ExtentListeners" />
+
+	</listeners>
+  <test  name="Get Started Form Test">
+    <classes>      
+            <!--  -class name="com.ddf.testcases.LoginTest"-->
+            <class name="com.nationalguard.testcases.GetStartedFormTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
