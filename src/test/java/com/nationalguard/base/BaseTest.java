@@ -16,11 +16,13 @@ import org.apache.commons.io.FileUtils;
 import org.apache.xmlbeans.impl.regex.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -93,7 +95,9 @@ public class BaseTest {
 			System.setProperty("webdriver.chrome.driver",
 			System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 			System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY, "null");
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+			driver = new ChromeDriver(options);
 
 		} else if (browserType.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver.exe");
